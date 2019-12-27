@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import {JogoDaVelhaModule} from "./jogo-da-velha";
+import {JogoDaVelhaModule} from './jogo-da-velha';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,6 +21,5 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  
+    
 });

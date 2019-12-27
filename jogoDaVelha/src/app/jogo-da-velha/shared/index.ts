@@ -1,3 +1,4 @@
 import { from } from 'rxjs';
 
-export * from "./jogo-da-velha.service";
+export * from './jogo-da-velha.service';
+

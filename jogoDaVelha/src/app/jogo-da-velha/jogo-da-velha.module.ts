@@ -13,7 +13,7 @@ import {JogoDaVelhaService} from './shared';
   exports: [
     JogoDaVelhaComponent
   ],
-  providers:[
+  providers: [
     JogoDaVelhaService
   ],
 })
