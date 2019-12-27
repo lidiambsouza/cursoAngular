@@ -21,9 +21,8 @@ export class ConversorService {
    */
   converter(conversao: Conversao): Observable<any> {
   // Na linha abaixo altere a '?' por '&'
-  let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
-  return this.http
-      .get(this.BASE_URL + params);
+    let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
+    return this.http.get(this.BASE_URL + params);
       // No Angular 6 as duas próximas linha não são mais necessárias
       //.map(response => response.json() as ConversaoResponse)
       //.catch(error => Observable.throw(error));
@@ -35,12 +34,11 @@ export class ConversorService {
    * @param Conversao conversao
    * @return number
    */
-  cotacaoPara(conversaoResponse: ConversaoResponse, 
- conversao: Conversao): number {
-  if (conversaoResponse === undefined) {
-  return 0;
-  }
-  return conversaoResponse.rates[conversao.moedaPara];
+  cotacaoPara(conversaoResponse: ConversaoResponse, conversao: Conversao): number {
+       if (conversaoResponse === undefined) {
+          return 0;
+        }
+      return conversaoResponse.rates[conversao.moedaPara];
   }
   /**
    * Retorna a cotação de dado uma response.
@@ -49,13 +47,11 @@ export class ConversorService {
    * @param Conversao conversao
    * @return string
    */
-  cotacaoDe(conversaoResponse: ConversaoResponse, 
- conversao: Conversao): string {
-  if (conversaoResponse === undefined) {
-  return '0';
-  }
-  return (1 / conversaoResponse.rates[conversao.moedaPara])
-  .toFixed(4);
+  cotacaoDe(conversaoResponse: ConversaoResponse, conversao: Conversao): string {
+    if (conversaoResponse === undefined) {
+      return '0';
+    }
+    return (1 / conversaoResponse.rates[conversao.moedaPara]).toFixed(4);
   }
   /**
    * Retorna a data da cotação dado uma response.
