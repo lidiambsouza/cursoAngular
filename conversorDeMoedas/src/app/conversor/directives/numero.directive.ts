@@ -12,6 +12,7 @@ export class NumeroDirective implements ControlValueAccessor {
 
     onTouched: any;
     onChange: any;
+   
 
   constructor(private el: ElementRef) { }
 
@@ -27,6 +28,19 @@ export class NumeroDirective implements ControlValueAccessor {
     }
 
     $event.target.value = valor;
+    this.onChange(valor);
+  }
+
+  registerOnChange(fn: any): void{
+    this.onChange=fn;
+  }
+
+  registerOnTouched(fn: any): void{
+    this.onTouched=fn;
+  }
+
+  writeValue(value: any): void{
+    this.el.nativeElement.value=value;
   }
 
 }
