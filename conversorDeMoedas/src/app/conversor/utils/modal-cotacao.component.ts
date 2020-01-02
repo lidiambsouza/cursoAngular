@@ -11,10 +11,15 @@ export class ModalCotacaoComponent implements OnInit {
   @Input() id:string;
   @Input() conversaoResponse: ConversaoResponse;
   @Input() conversao: Conversao = new Conversao();
+  @Output() onConfirm: EventEmitter<any> =new EventEmitter<any>();
 
   constructor(private conversorService: ConversorService) { }
 
   ngOnInit() {
+  }
+
+  novaConsulta(){
+    this.onConfirm.emit();
   }
 
   get valorConvertido(): string{
@@ -33,7 +38,7 @@ export class ModalCotacaoComponent implements OnInit {
     return this.conversorService.cotacaoDe(this.conversaoResponse, this.conversao);
   }
   get dataCotacao(): string{
-    return this.conversorService.dataCotacao(this.conversaoResponse, this.conversao);
+    return this.conversorService.dataCotacao(this.conversaoResponse);
   }
 
 }

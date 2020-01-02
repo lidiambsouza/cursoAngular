@@ -52,9 +52,9 @@
             [disabled]="!conversaoForm.form.valid"> {{conversaoResponse |json}}
 	  </form>
 	 </div>
-	 <modal=cotacao
+	 <modal-cotacao
 	 [id]="'modalCotacao'"
-	 [conversoaResponse]="conversaoResponse"
+	 [conversaoResponse]="conversaoResponse"
 	 [conversao]="conversao"
-	 (onConfirm)="init()"
+	 (onConfirm)="init()"></modal-cotacao>
 </div>
