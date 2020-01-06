@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import {DashboardModule} from './dashboard';
 import {CalculadoraModule} from './calculadora';
 import {ConversorModule} from './conversor';
+import {TarefasModule} from './tarefas';
 
 
 
@@ -22,6 +23,7 @@ import {ConversorModule} from './conversor';
     DashboardModule,
     CalculadoraModule,
     ConversorModule,
+    TarefasModule,
     AppRoutingModule
   ],
   providers: [],
